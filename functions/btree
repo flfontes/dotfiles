@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Prints an advanced numbered, recursive and colored directory treeview in bat
+#
+# @param $@ the directory path(s)
+
+btree() {
+  if command -v tree > /dev/null 2>&1; then
+    tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | bat
+  fi
+}
+

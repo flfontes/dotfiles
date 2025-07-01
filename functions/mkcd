@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+mkcd() {
+    mkdir "$@" && cd "$@"
+    }
+
+# mkcd $@
