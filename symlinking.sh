@@ -7,7 +7,17 @@
 
 ## Bash
 ln -s $(pwd)/bash ~/.config
-ln -s ~/.config/bashrc ~/.bashrc
+rm ~/.bashrc
+ln -s ~/.config/bash/bashrc ~/.bashrc
+
+
+## Functions
+ln -s $(pwd)/functions ~/.config
+
+
+## Git
+ln -s $(pwd)/git ~/.config
+ln -s ~/.config/git/gitconfig ~/.gitconfig
 
 
 ## NeoVim

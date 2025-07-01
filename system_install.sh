@@ -53,6 +53,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh \
     && source $HOME/.local/bin/env
 
 
+# Install Python Tools
+uv tool install ruff
+uv tool install pytest
+uv tool install poethepoet
+
 # Install other apps ----
 
 ## bat is a better version of cat
@@ -68,7 +73,7 @@ sudo dnf install -y bat \
 
 
 # Fedora tweaks
-source ./fix_closing_lid_action.sh
+source ./fedora/fix_closing_lid_action.sh
 
 
 # Reload Bash Configuration ----
