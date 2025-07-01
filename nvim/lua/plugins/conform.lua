@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       python = { "ruff" }, -- { "isort", "black" },
+      r = { "formatR", "lintr" },
       rust = { "rustfmt" },
     },
     format_on_save = {

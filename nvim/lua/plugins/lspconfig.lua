@@ -199,6 +199,7 @@ return {
         --},
       },
       -- marksman = {},
+      r_language_server = {},
       -- ruff = {},
       rust_analyzer = {},
     }
