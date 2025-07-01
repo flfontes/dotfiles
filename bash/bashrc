@@ -37,5 +37,19 @@ source ~/.config/bash/pathrc.conf
 source ~/.config/bash/alias.conf
 
 
+# Expose functions
+exclude="*.md"
+
+for file in ~/.config/functions/*; do
+    if [[ "$file" != $exclude ]]; then
+        [ -r "$file" ] && [ -f "$file" ] && source "$file"
+    fi
+done
+
+unset exclude
+unset file
+
+
 # Initialize Starship Prompt ----
 eval "$(starship init bash)"
+
