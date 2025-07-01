@@ -1,0 +1,18 @@
+# Git config
+
+
+[alias]
+	st = status
+
+
+[core]
+	editor = nvim
+
+
+[init]
+	defaultBranch = main
+
+
+[user]
+	email = 98757275+flfontes@users.noreply.github.com
+	name = flfontes
