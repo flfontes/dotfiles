@@ -4,7 +4,7 @@
 # This creates a HTTP server sharing the contents of the current folder.
 # The server is served at the local ip, port 9000
 server() {
-    py python -m http.server 9000
+    py -m http.server 9000
 }
 
 
@@ -12,4 +12,11 @@ server() {
 # The server is served at the local ip, port 2121, under annonymous login.
 serverf() {
     py --with pyftpdlib python -m pyftpdlib
+}
+
+
+# This spins a Marimo Notebook server using the current project venv.
+
+serverm() {
+    py --with marimo marimo edit --host 0.0.0.0 --port 9000
 }
