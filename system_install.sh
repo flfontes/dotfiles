@@ -54,9 +54,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh \
 
 
 # Install Python Tools
-uv tool install ruff
+uv tool install pylatexenc
 uv tool install pytest
-uv tool install poethepoet
+uv tool install ruff
+uv tool install tldr
 
 # Install other apps ----
 
@@ -65,10 +66,12 @@ uv tool install poethepoet
 ## fastfetch is the modern neofetch
 ## fzf is a modern fuzzy finder
 ## tmux is a terminal multiplexer
-sudo dnf install -y bat \
+sudo dnf install -y \
+    bat \
     btop \
     fastfetch \
     fzf \
+    just \
     tmux
 
 
