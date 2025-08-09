@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+pydev() {
+    cd ~/git/python/$1/;
+    }
+
+
+alias dots="cd ~/git/dotfiles/"
+
+
+alias nb="cd ~/notebook/ && nvim"

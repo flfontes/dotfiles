@@ -13,6 +13,6 @@ config.font_size = 11
 
 config.window_background_opacity = 0.9
 
-config.color_scheme = "Batman"
+config.color_scheme = "Catppuccin Mocha"
 
 return config
