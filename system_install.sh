@@ -11,21 +11,23 @@
 # Huggin and Munnin)... What can I say, I'm a proud geek!
 
 sudo hostnamectl set-hostname "Odin"
+sudo sed -i "$ a  UUID=1188fb82-ec8c-4576-8f1d-f7566ee2e766 /mnt/Munnin ext4 defaults 0 2" /etc/fstab
 
 
 # Updates Firmware ----
-sudo fwupdmgr refresh --force
-sudo fwupdmgr get-devices # Lists devices with available updates
-sudo fwupdmgr get-updates # Fetches list of available updates
-sudo fwupdmgr update
-
+source $(pwd)/system/update_firmware.sh
 
 # Install Ghostty ----
-source ./ghostty/install_ghostty.sh
+#source ./ghostty/install_ghostty.sh
+
+
+# Install LibreWolf
+curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
+sudo dnf install -y librewolf
 
 
 # Install NeoVim ----
-source ./nvim/install_neovim
+source $(pwd)/nvim/install_neovim
 
 
 # Install Nerd Fonts ----
@@ -45,7 +47,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 
 # SSH Configuration ----
-source ./ssh/config_ssh.sh
+source $(pwd)/ssh/config_ssh.sh
 
 
 # Install UV ----
@@ -69,14 +71,22 @@ uv tool install tldr
 sudo dnf install -y \
     bat \
     btop \
-    fastfetch \
     fzf \
     just \
     tmux
 
 
 # Fedora tweaks
-source ./fedora/fix_closing_lid_action.sh
+source $(pwd)/fedora/fix_closing_lid_action.sh
+source $(pwd)/fedora/add_nvidia_drivers.sh
+
+
+# Fedora COPR Installations
+source $(pwd)/fedora/install_calibre_with_copr.sh
+source $(pwd)/fedora/install_obsidian_with_copr.sh
+source $(pwd)/hypr/install_hyprland_with_copr.sh
+source $(pwd)/git/install_lazygit_with_copr.sh
+source $(pwd)/wezterm/install_wezterm_with_copr.sh
 
 
 # Reload Bash Configuration ----
